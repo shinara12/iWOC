@@ -1,0 +1,94 @@
+{%extends '3base4.html'%}
+
+{%block showdata%}
+<div class="container">
+  <div class="row" style="margin-bottom: 10px;">
+    <div class="col-lg-6">
+      <div style="float:left;">
+
+        <a href="{% url 'startScheduler' %}"><button class="btn  btn-success" title="Play" style="margin-right: 5px;"><span class="fa fa-play"></span> </button></button></a>
+        <a href="{% url 'Newprocess' %}"><button class="btn  btn-warning" title="Stop" style="margin-right: 5px;"><span class="fa fa-stop"></span></button></button></a>
+        <a href="{% url 'Newprocess' %}"><button class="btn  btn-info" title="add" style="margin-right: 5px;"><span class="fa fa-add"></span> </button></a>
+        <a href="{% url 'Newprocess' %}"><button class="btn  btn-info" title="Remove" style="margin-right: 5px;"><span class="fa fa-trash-can"></span> </button></a>
+        <a href="{% url 'Newprocess' %}"><button class="btn  btn-info" title="Refresh" style="margin-right: 5px;"><span class="fa fa-arrows-rotate"></span> </button></a>
+
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <form  action="{% url 'schedulerdata' %}" method='GET' class="form-inline my-2 my-lg-0" style="float:right;">
+        {%csrf_token%}
+        <input class="form-control mr-sm-2" name ="q" type="search" placeholder="Enter CYCLE" aria-label="Search">
+        <input type="submit" value="Search" class="btn btn-secondary">
+      </form>
+    </div>
+  </div>
+
+
+  <table class="table table-bordered table-responsive">
+  <tbody>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">FILE_NAME</th>
+      <th scope="col">PROGRAM_NAME</th>
+      <th scope="col">CLIENT_NAME</th>
+      <th scope="col">JOB_TITLE</th>
+      <th scope="col">FREQUENCY</th>
+      <th scope="col">STATUS</th>
+      <th scope="col">OUT_FILE_DIRECTORY</th>
+      <th scope="col">UPDATE</th>
+      <th scope="col">DELETE</th>
+
+
+    </tr>
+{%for i in datas%}      
+      <tr>
+        <td>{{i.ID}}</td>
+        <td>{{i.FILE_NAME}}</td>
+        <td>{{i.PROGRAM_NAME}}</td>
+        <td>{{i.CLIENT_NAME}}</td>
+        <td>{{i.JOB_TITLE}}</td>
+        <td>{{i.FREQUENCY}}</td>
+        <td>{{i.STATUS}}</td>
+        <td>{{i.OUT_FILE_DIRECTORY}}</td>
+
+        <td><a href="/editprocess/{{i.ID}}" class="btn btn-info">Edit</a></td>
+        
+        <td>    
+            <form action="/deletep/{{i.ID}}" method="post" class="d-inline">
+                {%csrf_token%}
+                <input type="submit" class="btn btn-danger" value="Delete">
+            </form>
+
+        </td>   
+        
+      </tr>
+   
+
+{%endfor%}
+</tbody>
+</table>
+</div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      {% if datas.has_previous %}
+      <a href="?page=1">&laquo First</a>
+    <a href="?page={{datas.previous_page_number}}">Previous</a>
+      {%endif%}
+    </li>
+    <!-- page{{datas.number}} of {{datas.paginator.num_pages}} -->
+
+    <li class="page-item">
+      {% if datas.has_next %}
+    <a href="?page={{datas.next_page_number}}">Next</a>
+    <a href="?page={{datas.paginator.num_pages}}">Last</a>
+    {%endif%}
+
+    </li>
+  </ul>
+</nav>
+<footer>
+  page {{datas.number}} of {{datas.paginator.num_pages}}
+</footer>
+{%endblock%}

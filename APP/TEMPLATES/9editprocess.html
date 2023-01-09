@@ -1,0 +1,84 @@
+{% extends '3base2.html' %}
+{%block editprocess %}                                       
+<form method="POST" class="post-form" action="{% url 'updateprocess' pi.ID %}">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Update Details</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label"> ID:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="ID" id="ID" required maxlength="20" value="{{ pi.ID }}"/>  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">FILE_NAME:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="FILE_NAME" id="FILE_NAME" required maxlength="100" value="{{ pi.FILE_NAME }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">UNIQUE_NAME:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="UNIQUE_NAME" id="UNIQUE_NAME" required maxlength="254" value="{{ pi.UNIQUE_NAME }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">PROGRAM_NAME</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="PROGRAM_NAME" id="PROGRAM_NAME" required maxlength="15" value="{{ pi.PROGRAM_NAME }}" />  
+    </div>  
+  </div>
+  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">CLIENT_NAME</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="CLIENT_NAME" id="CLIENT_NAME" required maxlength="15" value="{{ pi.CLIENT_NAME }}" />  
+    </div>  
+  </div> 
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">JOB_TITLE</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="JOB_TITLE" id="JOB_TITLE" required maxlength="15" value="{{ pi.JOB_TITLE }}" />  
+    </div>  
+  </div> 
+
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">FREQUENCY </label>  
+    <div class="col-sm-4">  
+        <input type="text" name="FREQUENCY" id="FREQUENCY" required maxlength="15" value="{{ pi.FREQUENCY }}" />  
+    </div>  
+  </div> 
+
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">STATUS</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="STATUS" id="STATUS" required maxlength="15" value="{{ pi.STATUS }}" />  
+    </div>  
+  </div> 
+
+
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">OUT_FILE_DIRECTORY</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="OUT_FILE_DIRECTORY" id="OUT_FILE_DIRECTORY" required maxlength="15" value="{{ pi.OUT_FILE_DIRECTORY }}" />  
+    </div>  
+  </div> 
+
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Update</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+{%endblock%}
