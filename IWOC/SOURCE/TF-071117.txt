@@ -1,0 +1,28 @@
+!1!Kami ingin memaklumkan bahawa pengeluaran penuh telah dibuat untuk akaun pembiayaan anda. \
+!2!Please be informed that your facility has been fully disbursed.\
+\
+!1!Pembayaran untuk ansuran bulanan anda bermula seperti dinyatakan di atas. \
+!2!Kindly effect your instalment payment effective from the above date.\
+\
+!1!Sila jelaskan sebarang faedah progresif yang perlu dibayar sebelum berkuatkuasanya ansuran bulanan bagi mengelak anda daripada dikenakan penalti faedah. \
+!2!Kindly settle all progressive interest due before the commencement date of the instalment amount in order to avoid penalty interest being imposed.\
+\
+!1!Penyata pembiayaan akan dihantar kepada anda sekali setahun untuk tujuan rekod. Sebagai alternatif, anda boleh menyemak maklumat terperinci di Maybank2U. Untuk akaun pembayaran melalui Arahan Tetap, tarikh pembayaran adalah pada 1 haribulan pada setiap bulan. \
+!2!The facility statement will be sent to you once a year for record purposes. Alternatively, you may check the details via Maybank2U. For accounts with Standing Instruction arrangement, the payment due date will be on the 1st day of each month.\
+\
+!1!Sila hubungi cawangan Bank, di mana akaun kemudahan pembiayaan anda diselenggarakan, jika anda memerlukan penjelasan lanjut. \
+!2!Do contact our branch, where your banking facility account is maintained, if you need further clarification.\
+\
+!1!Sila maklumkan kepada Pihak Bank dengan SEGERA sekiranya terdapat apa-apa perubahan alamat dan nombor telefon. \
+!2!Kindly notify the Bank IMMEDIATELY if there is any change of address and telephone number.\
+\
+!1!Terima kasih kerana menggunakan perkhidmatan perbankan kami. \
+!2!Thank you for banking with us.\
+\
+\
+!1!Yang benar, \
+bagi pihak!3! Maybank \
+\
+\
+!1!Ini adalah cetakan komputer, tandatangan tidak diperlukan. \
+!2!This is a computer generated, no signature is required. \

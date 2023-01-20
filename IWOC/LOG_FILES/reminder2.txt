@@ -1,0 +1,19 @@
+INTERCITY  MPC (M) Sdn. Bhd.
+FIRST REMINDER
+=============================================================
+Program ID           : FIRST REMINDER.PDS
+Paper Type           :
+File Name (PDF)      : rem22.pdf
+Data Name (TXT)      : R2 21112022-24112022-2.xlsx
+Total Accounts       :        9
+Total Pages          :        9
+Total Impression     :        18
+First Record         : 20416780020752
+Last Record          : 41006700775574
+=============================================================
+CUSTOMER NAME        : BSN                                   
+=============================================================
+Date & Time processed: 04/Jan/2023    12:16:34        12:16:36
+
+
+
