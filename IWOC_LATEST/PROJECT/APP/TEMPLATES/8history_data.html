@@ -1,0 +1,86 @@
+{%extends '3base4.html'%}
+
+{%block showdata%}
+<div class="container">
+  <div class="row" style="margin-bottom: 10px;">
+    <div class="col-lg-10">
+      <form  action="{% url 'showHistory' %}" method='GET' class="form-inline my-2 my-lg-0" style="float:right;">
+        {%csrf_token%}
+        <input class="form-control mr-sm-2" name ="q" type="search" placeholder="Search Product" aria-label="Search">
+        <input type="submit" value="Search" class="btn btn-secondary">
+      </form>
+      <form  action="{% url 'showHistory' %}" method='GET' class="form-inline my-2 my-lg-0" style="float:right;">
+        {%csrf_token%}
+        <input type='date' class="form-control mr-sm-2" name ="d1" type="search" placeholder="From" aria-label="Search">
+        <input type='date' class="form-control mr-sm-2" name ="d2" type="search" placeholder="To" aria-label="Search">
+        <input type="submit" value="Search" class="btn btn-secondary">
+      </form>
+
+    </div>
+  </div>
+
+
+  <table class="table table-bordered table-responsive">
+  <tbody>
+
+    <tr>
+      <th scope="col">JobIDX</th>
+      <th scope="col">Date</th>
+      <th scope="col">Start</th>
+      <th scope="col">Finish</th>
+      <th scope="col">User</th>
+      <th scope="col">Product</th>
+      <th scope="col">File</th>
+      <th scope="col">Status</th>
+      <th scope="col">Log</th>
+      <th scope="col">ActiveCount</th>
+      <th scope="col">Page</th>
+      <th scope="col">Impression</th>
+    </tr>
+{%for i in datas %}   
+
+  <tr>
+        <td>{{i.JobIDX}}</td>
+        <td>{{i.Date}}</td>
+        <td>{{i.Start}}</td>
+        <td>{{i.Finish}}</td>
+        <td>{{i.User}}</td>
+        <td>{{i.Product}}</td>
+        <td>{{i.File}}</td>
+        <td>{{i.Status}}</td>
+        <td>{{i.Log}}</td>
+        <td>{{i.ActiveCount}}</td>
+        <td>{{i.Page}}</td>
+        <td>{{i.Impression}}</td>
+      </tr>
+  
+
+{%endfor%}
+</tbody>
+</table>
+</div>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      {% if datas.has_previous %}
+      <a href="?page=1">&laquo First</a>
+    <a href="?page={{datas.previous_page_number}}">Previous</a>
+      {%endif%}
+    </li>
+    <!-- page{{datas.number}} of {{datas.paginator.num_pages}} -->
+
+    <li class="page-item">
+      {% if datas.has_next %}
+    <a href="?page={{datas.next_page_number}}">Next</a>
+    <a href="?page={{datas.paginator.num_pages}}">Last</a>
+
+    {%endif%}
+
+    </li>
+  </ul>
+</nav>
+<footer>
+  page {{datas.number}} of {{datas.paginator.num_pages}} 
+</footer>
+{%endblock%}

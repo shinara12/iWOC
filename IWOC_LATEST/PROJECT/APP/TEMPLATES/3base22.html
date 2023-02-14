@@ -1,0 +1,11 @@
+{%extends '3base1.html'%}
+
+{%block user%}
+<ul class="nav navbar-nav">
+    <li class="active"><a href="{% url 'adminhomepage' %}">Dashboard</a></li>
+  </ul>
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="{% url 'schedulerdatauser' %}">Production</a></li>
+  </ul>
+
+{%endblock%}

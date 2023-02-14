@@ -1,0 +1,54 @@
+{% extends '3base2.html' %}
+{%block editusers %}                        
+<form method="POST" class="post-form" action="{% url 'updateusers' user.id %}">  
+  {% csrf_token %}  
+<div class="container">   
+<br>  
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<h3>Update Details</h3>  
+</div>  
+</div>  
+<div class="form-group row">  
+  <div class="col-sm-4">  
+    <input type="hidden" name="id" id="id" required maxlength="254" value="{{ user.id  }}" />  
+  </div>  
+  </div>  
+  
+<div class="form-group row">  
+  <label class="col-sm-2 col-form-label">Username:</label>  
+  <div class="col-sm-4">  
+    <input type="text" name="email" id="id_email" required maxlength="254" value="{{ user.username  }}" />  
+  </div>  
+  </div>  
+  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">User  First Name:</label>  
+<div class="col-sm-4">  
+  <input type="text" name="fname" id="id_fname" required maxlength="20" value="{{ user.first_name }}"/>  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">User Last Name:</label>  
+<div class="col-sm-4">  
+  <input type="text" name="lastname" id="id_lname" required maxlength="100" value="{{ user.last_name }}" />  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-2 col-form-label">User Password:</label>  
+<div class="col-sm-4">  
+  <input type="password" name="pwd" id="id_pwd" required maxlength="15" value="{{ user.password}}" />  
+</div>  
+</div>  
+<div class="form-group row">  
+<label class="col-sm-1 col-form-label"></label>  
+<div class="col-sm-4">  
+<button type="submit" class="btn btn-success">Update</button>  
+</div>  
+</div>  
+</div>  
+</form>  
+
+{%endblock%}
+

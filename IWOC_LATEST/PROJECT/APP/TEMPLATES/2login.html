@@ -1,0 +1,84 @@
+{%load static%}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+    <title>LoginPage</title>
+    <style>
+        *{
+font-family: 'Poppins', sans-serif;
+}
+
+      .gradiant-btn{
+        background: linear-gradient(45deg, rgb(0 108 211) 0%,rgb(0 194 196) 50%,#4f9ae1);
+    color: #fff;
+      }
+    </style>
+  </head>
+
+<body>
+  <section class="vh-100" style="background-color: #4f9ae1;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="/static/images/LoginPage.png"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+          <form action="" method="POST">
+                    {%csrf_token%}        
+        
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                  {% endif %}
+            
+                <div class="text-center">
+                     <h1 class="font-size=55px">Login</h1>
+                </div>
+    
+     
+              <!-- Email input -->
+                <div class="form-outline mb-4 mt-4">
+                  <label>Username</label>
+                  {{ form.username }}
+                </div>
+    
+              <!-- Password input -->
+                <div class="form-outline mb-3">
+                  <label for="password">Password</label>
+             {{ form.password}}
+                </div>
+    
+                <div class="text-center text-lg-start mt-4 pt-2">
+                    <input type="submit" value="Submit" class="btn btn-lg gradiant-btn">
+                 </div>
+            </div>
+            </div>
+        </form>  
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    
+</body>
+</html>

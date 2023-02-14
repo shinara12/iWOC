@@ -1,0 +1,36 @@
+{% extends '3base4.html' %}
+
+{%block showusers%}
+<!-- <form method="POST" >  
+    {% csrf_token %} -->
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>User Name</th>   
+        <th>Email</th>
+        <th>Role</th>
+        <th>Date Joined</th>
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+    {% for use in user %}  
+    <tr>  
+        <td>{{ use.username }}</td>  
+        <td>{{ use.email }}</td>           
+        <td>{{ use.role }}</td>  
+        <td>{{ use.date_joined }}</td>
+        <td>        
+            <a href="/editusers/{{use.id}}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete/{{ use.id }}">Delete</a>
+        </td>  
+    </tr> 
+{% endfor %}
+</tbody>
+</table>
+<a href="{% url 'user' %}" class="btn btn-primary">Add New Record</a>
+
+<!-- </form>    -->
+<br/>
+{%endblock%}
+
